@@ -14,15 +14,26 @@
         </Grid.RowDefinitions>
         <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="400">
             <Label Content="Login: " HorizontalContentAlignment="Left" Height="40" Width="100" />
-            <TextBox x:Name="FirstnameM" Text="login1"  VerticalAlignment="Center"   Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="LoginL"  VerticalAlignment="Center" Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
         </StackPanel>
-        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="400" Margin="0,55,0,176">
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="400" Margin="0,207,0,24">
             <Label Content="Роль: " HorizontalContentAlignment="Left" Height="40" Width="100" />
-            <TextBox x:Name="Rol" Text="Manejer" VerticalAlignment="Center" Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="Rol" Text="Менеджер" VerticalAlignment="Center" Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
         </StackPanel>
-
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="400" Margin="0,50,0,0" >
+            <Label Content="Фамилия: " HorizontalContentAlignment="Left" Height="40" Width="117" Margin="0,5" />
+            <TextBox x:Name="FirstName"  VerticalAlignment="Center" Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
+        </StackPanel>
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="400" Margin="0,100,0,0" >
+            <Label Content="Имя: " HorizontalContentAlignment="Left" Height="40" Width="117" Margin="0,5" />
+            <TextBox x:Name="Name"  VerticalAlignment="Center" Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
+        </StackPanel>
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="400" Margin="0,157,0,0" >
+            <Label Content="Отчество: " HorizontalContentAlignment="Left" Height="40" Width="117" Margin="0,5" />
+            <TextBox x:Name="LastName"  VerticalAlignment="Center" Height="40" Width="250" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584"   >
-            <Button x:Name="spisok" Style="{StaticResource MainStyleWarningButton}" HorizontalAlignment="Left" Width="290" Content="Список всех заказов" Click="spisok_Click"/>
+            <Button x:Name="spisok" Style="{StaticResource MainStyleWarningButton}" HorizontalAlignment="Left" Width="290" Content="Список всех заказов" Click="Spisok_Click"/>
             <Button x:Name="NewZakaz" Margin="14,0,14,0" Style="{StaticResource MainStyleWarningButton}" HorizontalAlignment="Left" Width="282" Content="Новый заказ" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="60" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >

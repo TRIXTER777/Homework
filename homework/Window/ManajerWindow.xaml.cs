@@ -1,4 +1,6 @@
-﻿using System;
+﻿using homework.Entity;
+using homework.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +24,16 @@ namespace homework
         public ManajerWindow()
         {
             InitializeComponent();
+
+            var user = Class.UserSingleton.GetUser();
+            LoginL.Text = user.GetLogin();
+            FirstName.Text = user.GetFirstName();
+            Name.Text = user.GetSurName();
+            LastName.Text = user.GetLastName();
+
         }
 
-        private void spisok_Click(object sender, RoutedEventArgs e)
+        private void Spisok_Click(object sender, RoutedEventArgs e)
         {
             new SaleWindow().Show();
             Close();
@@ -34,6 +43,11 @@ namespace homework
         {
             new Authorize().Show();
             Close();
+        }
+
+        private void FirstnameM_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
         }
     }
 }

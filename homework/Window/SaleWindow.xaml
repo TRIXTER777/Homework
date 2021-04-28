@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:homework"
         mc:Ignorable="d"
-        Title="SaleWindow"  WindowStartupLocation="CenterScreen" MinHeight="430" MinWidth="380" Height="450" Width="400">
+        Title="SaleWindow"  WindowStartupLocation="CenterScreen" MinHeight="430" MinWidth="380" Height="450" Width="400"  >
     <Grid>
-        <DataGrid  x:Name="table"  Height="350" VerticalAlignment="Top"  IsReadOnly="True"  AutoGenerateColumns="True" IsManipulationEnabled="True" >
+      
+        <DataGrid  x:Name="TableGrid"  Height="350" VerticalAlignment="Top"  IsReadOnly="True"  AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Client" SortMemberPath="client"/>
-                <DataGridTextColumn Header="Status" SortMemberPath="status" />
-                <DataGridTextColumn  Header="Date Of Creation"/>
-                <DataGridTextColumn Header="Date Of Modification"/>
-                <DataGridTextColumn Header="Sum"/>
+                <DataGridTextColumn Header="FirstName" Binding="{Binding FirstNAme}"/>
+                <DataGridTextColumn Header="SurName" Binding="{Binding SurNAme}" />
+                <DataGridTextColumn Header="LastName" Binding="{Binding LastNAme}"/>
+                <DataGridTextColumn Header="OrderId" Binding="{Binding Oder_Id}"/>
+                <DataGridTextColumn Header="Products" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+              
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Back" Content="Назад" Style="{StaticResource MainSyleButton}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Back_Click"/>

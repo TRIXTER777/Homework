@@ -1,4 +1,6 @@
-﻿using System;
+﻿using homework.Entity;
+using homework.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +28,7 @@ namespace homework
         }
         private void Visible_Checked(object sender, RoutedEventArgs e)
         {
-
+            
             Pastext.Text = PasswordBox.Password;
             Pastext.Visibility = Visibility.Visible;
             PasswordBox.Visibility = Visibility.Collapsed;
@@ -49,25 +51,53 @@ namespace homework
         {
             this.Close();
         }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private bool AutheficationMethod(string login, string password)
         {
-            if (LoginBox.Text == "login1" && PasswordBox.Password == "tuptup" )
-            {
-                new ManajerWindow().Show();
-                Close();
-            }
-            else if (LoginBox.Text == "" || PasswordBox.Password == "" )
-            {
-                MessageBox.Show("Поле не заполнено","Ошибка" );
-            }
-            else if (LoginBox.Text != "login1" || PasswordBox.Password != "tuptup")
-            {
-                MessageBox.Show("Неправильный логин или пароль","Ошибка");
-            }
-           
-          
 
+            using (var  db = new EntityContext())
+            {
+                var maneger = db.Manager.FirstOrDefault(_maneger => _maneger.Login == login && _maneger.Password == password);
+                if(maneger==null)
+
+                    return false;
+
+                int id = maneger.UserID;
+                var manegerDb= db.User.FirstOrDefault(_managerDb =>_managerDb.id == id);
+                Class.UserSingleton.FromDb(maneger, manegerDb);
+                    return true;
+            }
+
+            
         }
+        public void Login_Click(object sender, RoutedEventArgs e)
+        {
+            if (LoginBox.Text != "" && (PasswordBox.Password != "" || Pastext.Text != "")) 
+            {
+                if (AutheficationMethod(LoginBox.Text, Pastext.Text.Length == 0 ? PasswordBox.Password : Pastext.Text))
+                {
+
+
+                    ManajerWindow user = new ManajerWindow();
+                    user.Show();
+                    this.Close();
+                    return;
+                }
+                else 
+                {
+                    MessageBox.Show("Ошибка авторизации","Login error", MessageBoxButton.OKCancel,MessageBoxImage.Error);
+                    return;
+                }
+            }
+            MessageBox.Show("Заполните все поля", "Login error", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+        }
+
+               
     }
+
+
+
+
 }
+    
+
+
