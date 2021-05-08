@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace homework.Class
 {
-    class ItemComboBox
+    class ProductComboBox
     {
-        public ItemComboBox()
+        public ProductComboBox()
         {
             using (var context = new EntityContext())
             {

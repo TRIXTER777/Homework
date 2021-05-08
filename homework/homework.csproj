@@ -174,7 +174,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class\ItemComboBox.cs" />
+    <Compile Include="Class\ProductComboBox.cs" />
     <Compile Include="Class\UserSingleton.cs" />
     <Compile Include="Entity\Client.cs" />
     <Compile Include="Entity\EntityContext.cs" />

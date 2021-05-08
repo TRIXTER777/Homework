@@ -8,7 +8,7 @@
       xmlns:br="clr-namespace:homework.Class"
         Title="NewZakazWindow" Height="450" Width="850">
     <Window.DataContext>
-        <br:ItemComboBox x:Name="pr"/>
+        <br:ProductComboBox x:Name="pr"/>
     </Window.DataContext>
     <Window.Resources>
 

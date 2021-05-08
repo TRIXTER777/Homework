@@ -21,19 +21,19 @@ namespace homework
             InitializeComponent();
             using (var db = new EntityContext())
             {
-                db.User.Load();
-                db.Products.Load();
-                db.Order.Load();
-                TableGrid.ItemsSource = (from  u in db.User.Local 
-                                         join p in db.Products.Local on u.id equals p.ID
-                                         select new
-                                         {
-                                             u.FirstName,
-                                             u.SurName,
-                                             u.LastName,                                
-                                             p.Name,
-                                             p.Price
-                                         });
+                //db.User.Load();
+                //db.Products.Load();
+                //db.Order.Load();
+                //TableGrid.ItemsSource = (from  u in db.User.Local 
+                //                         join p in db.Products.Local on u.id equals p.ID
+                //                         select new
+                //                         {
+                //                             u.FirstName,
+                //                             u.SurName,
+                //                             u.LastName,                                
+                //                             p.Name,
+                //                             p.Price
+                //                         });
             }
 
 
