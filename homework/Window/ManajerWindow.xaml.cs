@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using homework.Window;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -19,9 +20,9 @@ namespace homework
     /// <summary>
     /// Логика взаимодействия для ManajerWindow.xaml
     /// </summary>
-    public partial class ManajerWindow : Window
+    public partial class ManajerWindow 
     {
-        public ManajerWindow()
+        public ManajerWindow() 
         {
             InitializeComponent();
 
@@ -45,9 +46,11 @@ namespace homework
             Close();
         }
 
-        private void FirstnameM_TextChanged(object sender, TextChangedEventArgs e)
+        private void NewZakaz_Click(object sender, RoutedEventArgs e)
         {
-           
+            new NewZakazWindow().ShowDialog();
+            Close();
         }
     }
 }
+

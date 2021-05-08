@@ -2,6 +2,7 @@
 using homework.Models;
 using System.ComponentModel;
 using System.Data.Entity;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,7 +11,7 @@ namespace homework
     /// <summary>
     /// Логика взаимодействия для SaleWindow.xaml
     /// </summary>
-    public partial class SaleWindow : Window
+    public partial class SaleWindow 
     {
       
 
@@ -18,19 +19,23 @@ namespace homework
         public SaleWindow()
         {
             InitializeComponent();
+            using (var db = new EntityContext())
+            {
+                db.User.Load();
+                db.Products.Load();
+                db.Order.Load();
+                TableGrid.ItemsSource = (from  u in db.User.Local 
+                                         join p in db.Products.Local on u.id equals p.ID
+                                         select new
+                                         {
+                                             u.FirstName,
+                                             u.SurName,
+                                             u.LastName,                                
+                                             p.Name,
+                                             p.Price
+                                         });
+            }
 
-            //using (var db = new EntityContext())
-            //{
-            //    db.Client.Load();
-            //    db.User.Load();
-            //    db.Order.Load();
-            //    db.Products.Load();
-            //    var sl = from c in db.Client
-            //             join u in db.User on new { x1 = c.UserId } equals new { x1 = u.ID }
-                      
-            //             select new { c.ID, u.FirstName };
-            //    TableGrid.ItemsSource = sl.ToList();
-            //}
 
         }
 
@@ -41,6 +46,6 @@ namespace homework
             Close();
         }
 
-
+      
     }
 }

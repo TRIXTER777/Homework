@@ -16,7 +16,6 @@ namespace homework.Entity
             Manager = new HashSet<Manager>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [StringLength(15)]

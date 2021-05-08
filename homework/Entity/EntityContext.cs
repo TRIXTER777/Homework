@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
 namespace homework.Entity
@@ -21,7 +20,6 @@ namespace homework.Entity
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Client>()
                 .HasMany(e => e.Order)
                 .WithMany(e => e.Client)

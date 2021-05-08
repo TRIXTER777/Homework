@@ -12,14 +12,16 @@ namespace homework.Models
         private string surName;
         private string lastName;
         private string login;
+        private string password;
 
         public UserModel() { }
-        public UserModel(string _firstName, string _surName, string _lastName, string _login) 
+        public UserModel(string _firstName, string _surName, string _lastName, string _login, string _password) 
         {
            this.firstName = _firstName;
             this.surName = _surName;
             this.lastName = _lastName;
             this.login = _login;
+            this.password = _password;
         }
 
       
@@ -28,5 +30,6 @@ namespace homework.Models
         public string GetSurName() { return surName; }
         public string GetLastName() { return lastName; }
         public string GetLogin() { return login; }
+        public string GetPassword() { return password; }
     }
 }

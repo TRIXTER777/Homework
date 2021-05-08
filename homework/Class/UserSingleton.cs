@@ -20,7 +20,7 @@ namespace homework.Class
         public static Models.UserModel FromDb(Entity.Manager _maneger, Entity.User _user) 
         {
             GetUser();
-            user = new Models.UserModel(_user.FirstName,_user.SurName,_user.LastName,_maneger.Login);
+            user = new Models.UserModel(_user.FirstName,_user.SurName,_user.LastName,_maneger.Login,_maneger.Password);
             return user;
         }
     }

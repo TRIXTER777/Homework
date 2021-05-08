@@ -1,0 +1,57 @@
+﻿<Window x:Class="homework.Window.NewZakazWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:homework.Window"
+        mc:Ignorable="d"
+      xmlns:br="clr-namespace:homework.Class"
+        Title="NewZakazWindow" Height="450" Width="850">
+    <Window.DataContext>
+        <br:ItemComboBox x:Name="pr"/>
+    </Window.DataContext>
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="139*"/>
+            <RowDefinition Height="140*"/>
+            <RowDefinition Height="140*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Width="300" Height="30" VerticalAlignment="Top" Grid.Row="0" Margin="246,10,296,0" >
+            <Label Content="Фамилия: " Height="30" Width="100" HorizontalContentAlignment="Left"/>
+            <TextBox x:Name="FirstName" Height="30" Width="200" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Width="300" Height="30" Margin="248,50,394,59">
+            <Label Content="Имя: " HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="30"/>
+            <TextBox x:Name="SurName" Height="30" Width="250"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Width="300" Height="30" Margin="248,85,294,24">
+            <Label Content="Отчество: " HorizontalAlignment="Left" Width="100" HorizontalContentAlignment="Left" Height="30"/>
+            <TextBox x:Name="LastName" Height="30" Width="200" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"   Height="30" Width="350" Margin="246,10,246,100" >
+            <Label Content="Выберите товар: " VerticalContentAlignment="Center" Style="{StaticResource BaseSizes}" HorizontalContentAlignment="Left" Height="30" Width="140"/>
+            <ComboBox x:Name="Product" PreviewKeyDown="Product_PreviewKeyDown" ItemsSource="{Binding product}" SelectedItem="{Binding SelectedProduct}" HorizontalContentAlignment="Left" Width="210">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+       
+
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="150" Grid.Row="2" Margin="298,5,394,5" >
+
+            <Button x:Name="Save" Content="Сохранить" Click="Save_Click" Style="{StaticResource MainStyleWarningButton}"/>
+            <TextBlock Height="5"/>
+            <Button x:Name="Back" Content="Назад" Click="Back_Click" Style="{StaticResource MainSyleButton}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -20,9 +20,9 @@ namespace homework
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class Authorize : Window
+    public partial class Authorize 
     {
-        public Authorize()
+      public Authorize()
         {
             InitializeComponent();
         }

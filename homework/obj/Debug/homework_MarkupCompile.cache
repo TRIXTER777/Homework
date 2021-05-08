@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\homework\homework\obj\Debug\
+E:\homework12\homework\obj\Debug\
 homework
 none
 false
 DEBUG;TRACE
-D:\homework\homework\App.xaml
-6834529313
+E:\homework12\homework\App.xaml
+7-557149276
 
-18-467839004
-571422908992
-Source\BaseDictionary.xaml;Source\ButtonDictionary.xaml;Window\Authorize.xaml;Window\ManajerWindow.xaml;Window\SaleWindow.xaml;Source\TextDictionary.xaml;
+17-1149014543
+57-72800264
+Source\BaseDictionary.xaml;Source\ButtonDictionary.xaml;Window\Authorize.xaml;Window\ManajerWindow.xaml;Window\NewZakazWindow.xaml;Window\SaleWindow.xaml;Source\TextDictionary.xaml;
 
-True
+False
 

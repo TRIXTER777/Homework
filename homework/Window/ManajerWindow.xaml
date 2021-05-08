@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584"   >
             <Button x:Name="spisok" Style="{StaticResource MainStyleWarningButton}" HorizontalAlignment="Left" Width="290" Content="Список всех заказов" Click="Spisok_Click"/>
-            <Button x:Name="NewZakaz" Margin="14,0,14,0" Style="{StaticResource MainStyleWarningButton}" HorizontalAlignment="Left" Width="282" Content="Новый заказ" />
+            <Button x:Name="NewZakaz" Click="NewZakaz_Click" Margin="14,0,14,0" Style="{StaticResource MainStyleWarningButton}" HorizontalAlignment="Left" Width="282" Content="Новый заказ" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="60" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Button x:Name="Exit" Content="Выход" VerticalAlignment="Center" Height="50" HorizontalAlignment="Center" Width="300" Style="{StaticResource MainSyleButton}" Click="Exit_Click"/>
